@@ -28,17 +28,20 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-800">
+    <section className="pb-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-800 dark:to-gray-900">
+      <div className="w-full max-w-6xl mx-auto px-6 mb-12">
+        <hr className="border-gray-300 dark:border-gray-700" />
+      </div>
       <div className="container mx-auto px-6 text-center">
         {/* Skills */}
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-          Skills
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-8">
+          Core <span className="text-blue-600">Skills</span>
         </h2>
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-16">
           {skills.map((skill, i) => (
             <div
               key={i}
-              className="px-4 py-1 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-md shadow-sm font-medium text-sm md:text-base hover:shadow-md transition-shadow cursor-default"
+              className="px-5 py-2 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg shadow hover:shadow-lg font-medium text-sm md:text-base transition cursor-default"
             >
               {skill}
             </div>
@@ -46,14 +49,14 @@ const Skills = () => {
         </div>
 
         {/* Exposure */}
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
-          Exposure
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-8">
+          Tools & <span className="text-blue-600">Exposure</span>
         </h2>
         <div className="flex flex-wrap justify-center gap-3">
           {exposure.map((item, i) => (
             <div
               key={i}
-              className="px-4 py-1 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-md shadow-sm font-medium text-sm md:text-base hover:shadow-md transition-shadow cursor-default"
+              className="px-5 py-2 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-lg shadow hover:shadow-lg font-medium text-sm md:text-base transition cursor-default"
             >
               {item}
             </div>

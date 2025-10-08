@@ -46,11 +46,7 @@ const ProjectDetail = () => {
         </h3>
         <ul className="list-disc mb-4 text-gray-700 dark:text-gray-300 space-y-2">
           {project.scope?.map((item, i) => (
-            <li
-              key={i}
-              className="ml-6"
-              style={{ textIndent: "-1.5rem", paddingLeft: "1.5rem" }}
-            >
+            <li key={i} className="ml-6" style={{ paddingLeft: "1.5rem" }}>
               {item}
             </li>
           )) || "n/a"}
@@ -60,7 +56,7 @@ const ProjectDetail = () => {
         {project.stack && project.stack.length > 0 && (
           <div className="mb-4 flex flex-wrap items-center gap-2">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mr-2">
-              Stack:
+              Tech Stack:
             </h3>
             {project.stack.map((tech, i) => (
               <span

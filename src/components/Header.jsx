@@ -1,35 +1,98 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-// import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow z-50">
-      <nav className="container mx-auto flex justify-between items-center py-4 px-6">
+    <header className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md border-b border-gray-200 dark:border-gray-700 z-50">
+      <nav className="container mx-auto flex justify-between items-center py-5 px-6">
+        {/* Logo / Name */}
         <Link
           to="/"
-          className="font-bold text-xl text-gray-900 dark:text-white"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="font-bold text-2xl tracking-tight text-gray-900 dark:text-white"
         >
           Jalil Anthony Abulais
         </Link>
-        <ul className="hidden md:flex space-x-6 text-gray-700 dark:text-gray-200">
+
+        {/* Desktop Links */}
+        <ul className="hidden md:flex space-x-8 text-lg font-medium text-gray-700 dark:text-gray-200">
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="hover:text-blue-600 transition"
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
+            <Link className="hover:text-blue-600 transition" to="/projects">
+              Projects
+            </Link>
           </li>
           <li>
-            <Link to="/experience">Experience</Link>
+            <Link className="hover:text-blue-600 transition" to="/experience">
+              Experience
+            </Link>
           </li>
           <li>
-            <Link to="/education">Education</Link>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <Link className="hover:text-blue-600 transition" to="/education">
+              Education
+            </Link>
           </li>
         </ul>
-        {/* <DarkModeToggle /> */}
+
+        {/* Hamburger Button */}
+        <button
+          className="md:hidden flex flex-col gap-1.5"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+              isOpen ? "rotate-45 translate-y-1.5" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+              isOpen ? "opacity-0" : ""
+            }`}
+          ></span>
+          <span
+            className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+              isOpen ? "-rotate-45 -translate-y-1.5" : ""
+            }`}
+          ></span>
+        </button>
       </nav>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <ul className="md:hidden bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 flex flex-col space-y-2 py-4 px-6 shadow-lg">
+          <li>
+            <Link to="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/projects" onClick={() => setIsOpen(false)}>
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link to="/experience" onClick={() => setIsOpen(false)}>
+              Experience
+            </Link>
+          </li>
+          <li>
+            <Link to="/education" onClick={() => setIsOpen(false)}>
+              Education
+            </Link>
+          </li>
+        </ul>
+      )}
     </header>
   );
 };
