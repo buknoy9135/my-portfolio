@@ -26,7 +26,7 @@ const Footer = () => {
             LinkedIn
           </a>
           <a
-            href="mailto:jalilanthony@gmail.com"
+            href="mailto:contact@jalilanthony.com"
             className="hover:text-blue-600 transition"
           >
             Contact
