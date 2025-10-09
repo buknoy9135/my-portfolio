@@ -10,7 +10,7 @@ import Education from "./pages/Education";
 
 function App() {
   return (
-    <Router basename="/my-portfolio/">
+    <Router>
       <div className="App bg-white dark:bg-gray-900 min-h-screen flex flex-col">
         <Header />
         <ScrollToTop />
