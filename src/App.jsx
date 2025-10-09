@@ -14,7 +14,7 @@ function App() {
       <div className="App bg-white dark:bg-gray-900 min-h-screen flex flex-col">
         <Header />
         <ScrollToTop />
-        <main className="flex-1 pt-16">
+        <main className="flex-1 pt-12">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects" element={<Projects />} />
