@@ -5,8 +5,19 @@
     <link rel="icon" href="/JA-icon.png" type="image/png" sizes="512x512" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <lle>Jalil Anthony Abulais</title>
-    <script type="module" crossorigin src="/assets/index-ChJ2XEDq.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BkmfRruE.css">
+
+    <script>
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.style.colorScheme = 'light';
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-CSyprikU.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-IusSU2w7.css">
   </head>
   <body>
     <div id="root"></div>
