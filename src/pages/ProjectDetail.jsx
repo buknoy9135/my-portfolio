@@ -8,7 +8,7 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <section className="py-20 px-6 text-center">
+      <section className="py-10 px-6 text-center">
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
           Project Not Found
         </h2>

@@ -3,7 +3,7 @@ import profilePic from "../assets/1.jpg"; // adjust path
 
 const Hero = () => {
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 pt-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 gap-12">
+    <section className="flex flex-col md:flex-row items-center justify-center min-h-screen px-6 py-10 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 gap-12">
       {/* Photo */}
       <div className="w-44 h-56 md:w-64 md:h-80 lg:w-80 lg:h-[22rem] rounded-3xl overflow-hidden shadow-2xl shadow-blue-500/30 ring-4 ring-blue-400 flex-shrink-0">
         <img

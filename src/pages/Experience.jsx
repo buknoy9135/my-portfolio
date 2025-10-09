@@ -3,7 +3,7 @@ import ExperienceCard from "../components/ExperienceCard";
 
 const Experience = () => {
   return (
-    <section className="py-20 px-6 bg-white dark:bg-gray-900">
+    <section className="py-10 px-6 bg-white dark:bg-gray-900">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-8 text-center">
           Professional Experience
