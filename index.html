@@ -8,7 +8,13 @@
 
     <script>
       const theme = localStorage.getItem('theme');
-      if (theme === 'dark') {
+
+      // If nothing saved yet, default to dark
+      if (!theme) {
+        localStorage.setItem('theme', 'dark');
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
+      } else if (theme === 'dark') {
         document.documentElement.classList.add('dark');
         document.documentElement.style.colorScheme = 'dark';
       } else {
