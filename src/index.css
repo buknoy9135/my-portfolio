@@ -1,8 +1,16 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+} */
+
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
 
 html, body, #root {
   height: 100%;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,56 +17,62 @@ const Header = () => {
           Jalil Anthony Abulais
         </Link>
 
-        {/* Desktop Links */}
-        <ul className="hidden md:flex space-x-8 text-lg font-medium text-gray-700 dark:text-gray-200">
-          <li>
-            <Link
-              to="/"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="hover:text-blue-600 transition"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className="hover:text-blue-600 transition" to="/projects">
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link className="hover:text-blue-600 transition" to="/experience">
-              Experience
-            </Link>
-          </li>
-          <li>
-            <Link className="hover:text-blue-600 transition" to="/education">
-              Education
-            </Link>
-          </li>
-        </ul>
+        {/* Desktop Links + Dark Mode Toggle */}
+        <div className="hidden md:flex items-center space-x-8">
+          <ul className="flex space-x-8 text-lg font-medium text-gray-700 dark:text-gray-200">
+            <li>
+              <Link
+                to="/"
+                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                className="hover:text-blue-600 transition"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-blue-600 transition" to="/projects">
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-blue-600 transition" to="/experience">
+                Experience
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:text-blue-600 transition" to="/education">
+                Education
+              </Link>
+            </li>
+          </ul>
+          <DarkModeToggle />
+        </div>
 
-        {/* Hamburger Button */}
-        <button
-          className="md:hidden flex flex-col gap-1.5"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
-              isOpen ? "rotate-45 translate-y-1.5" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
-              isOpen ? "opacity-0" : ""
-            }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
-              isOpen ? "-rotate-45 -translate-y-1.5" : ""
-            }`}
-          ></span>
-        </button>
+        {/* Mobile: Dark Mode Toggle + Hamburger Button */}
+        <div className="md:hidden flex items-center gap-3">
+          <DarkModeToggle />
+          <button
+            className="flex flex-col gap-1.5"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+                isOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+                isOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-gray-800 dark:bg-white transition-all duration-300 ${
+                isOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile Menu */}
