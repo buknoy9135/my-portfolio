@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ProjectCard = ({ id, title, description, live }) => {
   return (
     <Link to={`/projects/${id}`} className="group">
-      <div className="bg-white dark:bg-gray-900 rounded-xl shadow p-6 hover:shadow-lg transition flex flex-col h-full">
+      <div className="bg-white dark:bg-gray-700 rounded-xl shadow-xl p-6 hover:shadow-lg transition flex flex-col h-full">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600">
           {title}
         </h3>

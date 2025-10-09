@@ -14,7 +14,7 @@ const ExperiencePreview = () => {
           {experience.slice(0, 3).map((exp, index) => (
             <div
               key={index}
-              className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow hover:shadow-md transition text-left"
+              className="p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow hover:shadow-md transition text-left"
             >
               <span className="inline-block bg-blue-100 dark:bg-blue-800 text-blue-800 dark:text-blue-100 text-xs font-medium px-2 py-1 rounded-full mb-2">
                 {exp.period}

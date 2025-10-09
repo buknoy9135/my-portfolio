@@ -24,7 +24,7 @@ const ProjectDetail = () => {
 
   return (
     <section className="py-20 px-6">
-      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-900 p-8 rounded-xl shadow">
+      <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-xl shadow-xl">
         {/* Project Title */}
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           {project.title}
@@ -44,9 +44,16 @@ const ProjectDetail = () => {
         <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
           Description:
         </h3>
-        <ul className="list-disc mb-4 text-gray-700 dark:text-gray-300 space-y-2">
+        <ul className="space-y-2">
           {project.scope?.map((item, i) => (
-            <li key={i} className="ml-6" style={{ paddingLeft: "1.5rem" }}>
+            <li
+              key={i}
+              className="text-gray-700 dark:text-gray-300 pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-blue-600"
+              style={{
+                fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                fontSize: "0.95rem",
+              }}
+            >
               {item}
             </li>
           )) || "n/a"}
@@ -54,7 +61,7 @@ const ProjectDetail = () => {
 
         {/* Stack Section - ABOVE buttons */}
         {project.stack && project.stack.length > 0 && (
-          <div className="mb-4 flex flex-wrap items-center gap-2">
+          <div className="my-4 flex flex-wrap items-center gap-2">
             <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mr-2">
               Tech Stack:
             </h3>
